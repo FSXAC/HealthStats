@@ -77,7 +77,7 @@ def format_value(value, datatype):
         return ''
     elif datatype == 's':
         # string
-        return f'"{value.replace("\\", "\\\\").replace("\"", "\\\"")}"'
+        return '"%s"' % value.replace('\\', '\\\\').replace('"', '\\"')
     elif datatype in ('n', 'd'):
         # number or date
         return value
